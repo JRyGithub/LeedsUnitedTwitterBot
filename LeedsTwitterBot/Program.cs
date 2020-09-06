@@ -1,46 +1,44 @@
-﻿using RestSharp;
+﻿using Newtonsoft.Json;
+using RestSharp;
 using System;
 using System.IO;
+using System.Net;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace LeedsTwitterBot
 {
     class Program
     {
         private string tweet = "Hello World";
+        private string consumerAPIKey = "hpihcVfSGLwviK26oUnuctpWj";
+        private string consumerAPISecret = "zmwDeTPnX0Oig7ZtAdy2tgBqP6n819gTO6enuXsFLKBqbHVmmu";
+        private string oAuthAccessToken = "1301394952048451584-4mABjO3BD6vSQZHFzIXvAZ9xjKtsqO";
+        private string oAuthAccessTokenSecret = "ukuP7vJIlkao0j5LtGtr2oPXFzW06LgA0YEgPARgbI4s3";
 
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
             Program p = new Program();
-            var tweetSuccess = p.SimpleTweet();
-            if (tweetSuccess)
-            {
-                Console.WriteLine("Tweet was succesfull.");
-            }
-            else
-            {
-                Console.WriteLine("Tweet was a failure :( ");
-            }
+            p.SimpleTweet();
         }
-        public Boolean SimpleTweet()
-        {
-            try
-            {
-                var client = new RestClient("https://api.twitter.com/1.1/statuses/update.json?status=leeds");
-                client.Timeout = -1;
-                var request = new RestRequest(Method.POST);
-                request.AddHeader("authorization", "OAuth oauth_consumer_key=\"GdmIYq8KvQhqzN1hpP08Nfm7c\",oauth_token=\"1301394952048451584-VP2esgql7oBHCoLgynUmQabjPQFRhB\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1599267293\",oauth_nonce=\"upT2VQPgagx\",oauth_version=\"1.0\",oauth_signature=\"Hw3XJEFUkE0acsRew66GIk1oO14%3D\"");
-                request.AddHeader("Cookie", "personalization_id=\"v1_nEQMGNedf3ikHnydxVwfYQ==\"; guest_id=v1%3A159911545672516549; lang=en");
-                IRestResponse response = client.Execute(request);
-                Console.WriteLine(response.Content);
-                //{"errors":[{"code":32,"message":"Could not authenticate you."}]}
 
-                return true;
-            }
-            catch (IOException)
+        public void SimpleTweet()
+        {
+            var twitterOauthToken = oAuthAccessToken;
+            var twitterOauthTokenSecret = oAuthAccessTokenSecret;
+            var twitterOauthConsumerKey = consumerAPIKey;
+            var twitterOauthConsumerSecret = consumerAPISecret;
+
+
+            var request = new RestRequest($"1.1/statuses/update.json?status={tweet}", Method.POST);
+
+            var client = new RestClient("https://api.twitter.com")
             {
-                return false;
-            }
+                Authenticator = RestSharp.Authenticators.OAuth1Authenticator.ForProtectedResource(twitterOauthConsumerKey, twitterOauthConsumerSecret, twitterOauthToken, twitterOauthTokenSecret)
+            };
+            IRestResponse response = client.Execute(request);
+            Console.WriteLine(response.Content);
         }
     }
 }
