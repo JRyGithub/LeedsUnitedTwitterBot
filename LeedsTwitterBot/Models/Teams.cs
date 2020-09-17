@@ -62,7 +62,7 @@ namespace LeedsTwitterBot.Models
         public long StrengthOverallHome { get; set; }
 
         [JsonProperty("team_division")]
-        public long? TeamDivision { get; set; }
+        public long? TeamDivision { get; set; }//Maybe Array
 
         [JsonProperty("unavailable")]
         public bool Unavailable { get; set; }

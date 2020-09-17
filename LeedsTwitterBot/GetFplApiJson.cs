@@ -17,7 +17,7 @@ namespace LeedsTwitterBot
 
             var json = JsonConvert.SerializeObject(response.Content);
 
-            dynamic jsonResponse = JsonConvert.DeserializeObject<Models.FplApiResponse>(json);
+            dynamic jsonResponse = JsonConvert.DeserializeObject<Models.GlobalModel>(json);
             
             Console.WriteLine(jsonResponse.GetType());
         }

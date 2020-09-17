@@ -48,20 +48,41 @@ namespace LeedsTwitterBot.Models
        
         [JsonProperty("transfers_sell_on_fee")]
         public double TransfersSellOnFee { get; set; }
- "league_max_size_public_h2h": 16,
-        "league_max_size_private_h2h": 16,
-        "league_ko_first_instead_of_random": false,
-        "cup_start_event_id": 17,
-        "cup_stop_event_id": 38,
-        "cup_qualifying_method": "event",
-        "cup_type": "random",
-        "ui_currency_multiplier": 10,
-        "ui_use_special_shirts": false,
-        "ui_special_shirt_exclusions": [],
-        "stats_form_days": 30,
-         "league_h2h_tiebreak_stats": [
-            "+goals_scored",
-            "-goals_conceded"
-        ],
-        "timezone": "UTC"
+
+        [JsonProperty("league_max_size_public_h2h")]
+        public long LeagueMaxSizePublicH2h { get; set; }
+
+        [JsonProperty("league_max_size_private_h2h")]
+        public long LeagueMaxSizePrivateH2h { get; set; }
+
+        [JsonProperty("league_ko_first_instead_of_random")]
+        public long LeagueKoFirstInsteadOfRandom { get; set; }
+
+        [JsonProperty("cup_stop_event_id")]
+        public long CupStopEventId { get; set; }
+      
+        [JsonProperty("cup_qualifying_method")]
+        public string CupQualifyingMethod { get; set; }
+        
+        [JsonProperty("cup_type")]
+        public string CupType { get; set; }
+        
+        [JsonProperty("ui_currency_multiplier")]
+        public long UiCurrencyMultiplier { get; set; }
+
+        [JsonProperty("ui_use_special_shirts")]
+        public bool UiUseSpecialShirts { get; set; }
+
+        [JsonProperty("ui_special_shirt_exclusions")]
+        public Array UiSpecialShirtExclusions { get; set; }
+        
+        [JsonProperty("stats_form_days")]
+        public long StatsFormDays { get; set; }
+        
+        [JsonProperty("league_h2h_tiebreak_stats")]
+        public Array LeagueH2hTiebreakStats { get; set; }
+        
+        [JsonProperty("timezone")]
+        public string Timezone { get; set; }
+    }
 }
