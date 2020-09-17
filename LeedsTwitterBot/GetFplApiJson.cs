@@ -1,6 +1,5 @@
 using RestSharp;
 using System;
-using System.IO;
 using Newtonsoft.Json;
 
 namespace LeedsTwitterBot
@@ -15,8 +14,10 @@ namespace LeedsTwitterBot
             var request = new RestRequest(Method.GET);
 
             IRestResponse response = client.Execute(request);
-            
-            dynamic jsonResponse = JsonConvert.DeserializeObject<Models.FplApiResponse>(response.Content);
+
+            var json = JsonConvert.SerializeObject(response.Content);
+
+            dynamic jsonResponse = JsonConvert.DeserializeObject<Models.FplApiResponse>(json);
             
             Console.WriteLine(jsonResponse.GetType());
         }
