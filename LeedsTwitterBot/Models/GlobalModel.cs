@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace LeedsTwitterBot.Models
 {
-    public class FplGlobalSettings
+    public class GlobalModel
     {
         [JsonProperty("teams")]
         public ICollection<Teams> Teams { get; set; }

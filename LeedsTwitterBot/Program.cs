@@ -5,6 +5,7 @@ using System.IO;
 using System.Net;
 using System.Security.Cryptography;
 using System.Text;
+using System.Net.Http;
 
 namespace LeedsTwitterBot
 {
@@ -17,7 +18,8 @@ namespace LeedsTwitterBot
             p.Run();
         }
         public void Run(){
-            GetFplApiJson fplJson = new GetFplApiJson();
+            HttpClient client = new HttpClient();
+            GetFplApiJson fplJson = new GetFplApiJson(client);
             fplJson.GetFplJson();
 
             //SendTweet sendTweet = new SendTweet();
