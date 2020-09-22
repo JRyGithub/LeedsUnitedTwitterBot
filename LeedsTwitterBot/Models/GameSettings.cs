@@ -1,7 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace LeedsTwitterBot.Models
 {
@@ -74,13 +72,13 @@ namespace LeedsTwitterBot.Models
         public bool UiUseSpecialShirts { get; set; }
 
         [JsonProperty("ui_special_shirt_exclusions")]
-        public Array UiSpecialShirtExclusions { get; set; }
+        public string[] UiSpecialShirtExclusions { get; set; }
         
         [JsonProperty("stats_form_days")]
         public long StatsFormDays { get; set; }
         
         [JsonProperty("league_h2h_tiebreak_stats")]
-        public Array LeagueH2hTiebreakStats { get; set; }
+        public string[] LeagueH2hTiebreakStats { get; set; }
         
         [JsonProperty("timezone")]
         public string Timezone { get; set; }

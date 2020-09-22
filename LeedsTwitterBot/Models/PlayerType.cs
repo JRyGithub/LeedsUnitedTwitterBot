@@ -33,7 +33,7 @@ namespace LeedsTwitterBot.Models
         public bool UiShirtSpecific { get; set; }
        
         [JsonProperty("sub_positions_locked")]
-        public int? SubPositionsLocked { get; set; }
+        public int[] SubPositionsLocked { get; set; } //Array?
         
         [JsonProperty("element_count")]
         public int? ElementCount { get; set; }

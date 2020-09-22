@@ -1,56 +1,29 @@
-/*using RestSharp;
+using RestSharp;
 using System;
 using Newtonsoft.Json;
 using LeedsTwitterBot.Models;
+
 namespace LeedsTwitterBot
 {
     public class GetFplApiJson
     {
-        public void GetFplJson(){
+        public async System.Threading.Tasks.Task GetFplJsonAsync(){
             var client = new RestClient("https://fantasy.premierleague.com/api/bootstrap-static/");
 
-            client.Timeout = -1;
+            var response = client.Execute<GlobalModel>(new RestRequest());
 
-            var request = new RestRequest(Method.GET);
+           // Console.WriteLine(response.Data.TotalPlayers);
+            //client.Timeout = -1;
 
-            IRestResponse response = client.Execute(request);
+            //var request = new RestRequest(Method.GET);
 
-            var json = JsonConvert.SerializeObject(response.Content);
+            //IRestResponse response = client.Execute(request);
 
-            dynamic jsonResponse = JsonConvert.DeserializeObject<GlobalModel>(json);
-            
+            //var json = JsonConvert.SerializeObject(response.Content);
+
+            //dynamic jsonResponse = JsonConvert.DeserializeObject<GlobalModel>(json);
+
             //Console.WriteLine(jsonResponse.GetType());
-        }
-    }
-}*/using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
-using LeedsTwitterBot.Models;
-using Newtonsoft.Json;
-using System;
-
-namespace LeedsTwitterBot
-{
-    public class GetFplApiJson
-    {
-        private readonly HttpClient _client;
-
-        public GetFplApiJson(HttpClient client)
-        {
-            _client = client;
-        }
-
-        public async void GetFplJson()
-        {
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-
-            const string url = "https://fantasy.premierleague.com/api/bootstrap-static/";
-
-            var json = await _client.GetStringAsync(url);
-
-            var ting = JsonConvert.DeserializeObject<GlobalModel>(json);
-
-            Console.WriteLine(ting.GetType());
         }
     }
 }

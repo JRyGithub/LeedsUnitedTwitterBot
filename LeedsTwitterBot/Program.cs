@@ -18,12 +18,14 @@ namespace LeedsTwitterBot
             p.Run();
         }
         public void Run(){
-            HttpClient client = new HttpClient();
-            GetFplApiJson fplJson = new GetFplApiJson(client);
-            fplJson.GetFplJson();
+            //GetFplApiJson fplJson = new GetFplApiJson();
+            //fplJson.GetFplJsonAsync();
 
             //SendTweet sendTweet = new SendTweet();
             //sendTweet.SimpleTweet();
+
+            TestJSONtoModel jsonToModel = new TestJSONtoModel();
+            jsonToModel.TestJsonToModelAsync();
         }
     }
 }
