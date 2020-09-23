@@ -1,18 +1,19 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 
 namespace LeedsTwitterBot.Models
 {
     public class Event
     {
         [JsonProperty("id")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
 
         [JsonProperty("deadline_time")]
-        public DateTime Deadline { get; set; }
+        public string Deadline { get; set; }
 
         [JsonProperty("average_entry_score")]
         public double AverageScore { get; set; }
@@ -32,9 +33,6 @@ namespace LeedsTwitterBot.Models
         [JsonProperty("deadline_time_game_offset")]
         public int DeadLineTimeGameOffset { get; set; }
 
-        [JsonProperty("deadline_time_formatted")]
-        public string DeadLineTimeFormatted { get; set; }
-
         [JsonProperty("highest_score")]
         public int? HighestScore { get; set; }
 
@@ -48,7 +46,7 @@ namespace LeedsTwitterBot.Models
         public bool IsNext { get; set; }
 
         [JsonProperty("chip_plays")]
-        public ChipPlays ChipPlays { get; set; }
+        public ICollection<ChipPlays> ChipPlays { get; set; }
 
         [JsonProperty("most_selected")]
         public int? MostSelected { get; set; }
@@ -70,21 +68,5 @@ namespace LeedsTwitterBot.Models
 
         [JsonProperty("most_vice_captained")]
         public int? MostViceCaptained { get; set; }    
-    }
-    public class ChipPlays
-    {
-        [JsonProperty("chip_name")]
-        public string ChipName { get; set; }
-        [JsonProperty("num_played")]
-        public long? NumPlayed { get; set; }
-
-    }
-    public class TopElementInfo
-    {
-        [JsonProperty("id")]
-        public string Id { get; set; }
-        [JsonProperty("points")]
-        public long? Points { get; set; }
-
     }
 }

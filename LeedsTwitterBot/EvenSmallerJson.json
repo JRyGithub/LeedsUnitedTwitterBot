@@ -1,4 +1,215 @@
 {
+  "events": [
+    {
+      "id": 1,
+      "name": "Gameweek 1",
+      "deadline_time": "2020-09-12T10:00:00Z",
+      "average_entry_score": 50,
+      "finished": true,
+      "data_checked": true,
+      "highest_scoring_entry": 4761681,
+      "deadline_time_epoch": 1599904800,
+      "deadline_time_game_offset": 0,
+      "highest_score": 142,
+      "is_previous": true,
+      "is_current": false,
+      "is_next": false,
+      "chip_plays": [
+        {
+          "chip_name": "bboost",
+          "num_played": 112843
+        },
+        {
+          "chip_name": "3xc",
+          "num_played": 225426
+        }
+      ],
+      "most_selected": 259,
+      "most_transferred_in": 1,
+      "top_element": 254,
+      "top_element_info": {
+        "id": 254,
+        "points": 20
+      },
+      "transfers_made": 0,
+      "most_captained": 4,
+      "most_vice_captained": 4
+    },
+    {
+      "id": 38,
+      "name": "Gameweek 38",
+      "deadline_time": "2021-05-23T13:30:00Z",
+      "average_entry_score": 0,
+      "finished": false,
+      "data_checked": false,
+      "highest_scoring_entry": null,
+      "deadline_time_epoch": 1621776600,
+      "deadline_time_game_offset": 0,
+      "highest_score": null,
+      "is_previous": false,
+      "is_current": false,
+      "is_next": false,
+      "chip_plays": [],
+      "most_selected": null,
+      "most_transferred_in": null,
+      "top_element": null,
+      "top_element_info": null,
+      "transfers_made": 0,
+      "most_captained": null,
+      "most_vice_captained": null
+    }
+  ],
+  "teams": [
+    {
+      "code": 3,
+      "draw": 0,
+      "form": null,
+      "id": 1,
+      "loss": 0,
+      "name": "Arsenal",
+      "played": 0,
+      "points": 0,
+      "position": 0,
+      "short_name": "ARS",
+      "strength": 4,
+      "team_division": null,
+      "unavailable": false,
+      "win": 0,
+      "strength_overall_home": 1190,
+      "strength_overall_away": 1270,
+      "strength_attack_home": 1190,
+      "strength_attack_away": 1200,
+      "strength_defence_home": 1160,
+      "strength_defence_away": 1270,
+      "pulse_id": 1
+    },
+    {
+      "code": 21,
+      "draw": 0,
+      "form": null,
+      "id": 19,
+      "loss": 0,
+      "name": "West Ham",
+      "played": 0,
+      "points": 0,
+      "position": 0,
+      "short_name": "WHU",
+      "strength": 3,
+      "team_division": null,
+      "unavailable": false,
+      "win": 0,
+      "strength_overall_home": 1070,
+      "strength_overall_away": 1100,
+      "strength_attack_home": 1090,
+      "strength_attack_away": 1090,
+      "strength_defence_home": 1040,
+      "strength_defence_away": 1210,
+      "pulse_id": 25
+    },
+    {
+      "code": 39,
+      "draw": 0,
+      "form": null,
+      "id": 20,
+      "loss": 0,
+      "name": "Wolves",
+      "played": 0,
+      "points": 0,
+      "position": 0,
+      "short_name": "WOL",
+      "strength": 3,
+      "team_division": null,
+      "unavailable": false,
+      "win": 0,
+      "strength_overall_home": 1200,
+      "strength_overall_away": 1190,
+      "strength_attack_home": 1230,
+      "strength_attack_away": 1250,
+      "strength_defence_home": 1170,
+      "strength_defence_away": 1200,
+      "pulse_id": 38
+    }
+  ],
+  "element_types": [
+    {
+      "id": 1,
+      "plural_name": "Goalkeepers",
+      "plural_name_short": "GKP",
+      "singular_name": "Goalkeeper",
+      "singular_name_short": "GKP",
+      "squad_select": 2,
+      "squad_min_play": 1,
+      "squad_max_play": 1,
+      "ui_shirt_specific": true,
+      "sub_positions_locked": [
+        12
+      ],
+      "element_count": 57
+    }
+  ],
+  "total_players": 6679827,
+  "phases": [
+    {
+      "id": 1,
+      "name": "Overall",
+      "start_event": 1,
+      "stop_event": 38
+    },
+    {
+      "id": 2,
+      "name": "September",
+      "start_event": 1,
+      "stop_event": 3
+    },
+    {
+      "id": 3,
+      "name": "October",
+      "start_event": 4,
+      "stop_event": 7
+    },
+    {
+      "id": 4,
+      "name": "November",
+      "start_event": 8,
+      "stop_event": 10
+    },
+    {
+      "id": 5,
+      "name": "December",
+      "start_event": 11,
+      "stop_event": 16
+    },
+    {
+      "id": 6,
+      "name": "January",
+      "start_event": 17,
+      "stop_event": 21
+    },
+    {
+      "id": 7,
+      "name": "February",
+      "start_event": 22,
+      "stop_event": 26
+    },
+    {
+      "id": 8,
+      "name": "March",
+      "start_event": 27,
+      "stop_event": 29
+    },
+    {
+      "id": 9,
+      "name": "April",
+      "start_event": 30,
+      "stop_event": 33
+    },
+    {
+      "id": 10,
+      "name": "May",
+      "start_event": 34,
+      "stop_event": 38
+    }
+  ],
   "element_stats": [
     {
       "label": "Minutes played",

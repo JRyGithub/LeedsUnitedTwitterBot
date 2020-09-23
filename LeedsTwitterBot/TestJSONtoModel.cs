@@ -36,6 +36,42 @@ namespace LeedsTwitterBot
                     Console.WriteLine("Name of Stat: " + stat.Name);
                 }
 
+                Console.WriteLine("Phases");
+                foreach (var phase in items.Phases)
+                {
+                    Console.WriteLine("Name of Phase: " + phase.Name);
+                }
+
+                Console.WriteLine("TOTAL PLAYERS: " + items.TotalPlayers);
+
+                Console.WriteLine("ELEMENTTYPE");
+                foreach (var element in items.PlayerTypes)
+                {
+                    Console.WriteLine("Name: " + element.SingularName);
+                    Console.WriteLine("SubPosLocked" + element.SubPositionsLocked[0]);
+                }
+
+                Console.WriteLine("TEAMS");
+                foreach (var team in items.Teams)
+                {
+                    Console.WriteLine("Name: " + team.Name);
+                }
+
+                Console.WriteLine("EVENTS");
+                foreach (var event1 in items.Events)
+                {
+                    Console.WriteLine("Name: " + event1.Name);
+                    if (event1.TopElementInfo != null)
+                    {
+                        Console.WriteLine("TopElementInfo:" + event1.TopElementInfo.Id);
+                    }
+                        foreach (var chip in event1.ChipPlays)
+                    {
+                        Console.WriteLine("ChipName: " + chip.ChipName);
+                    }
+                }             
+
+
             }
         }
         
