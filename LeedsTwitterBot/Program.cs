@@ -1,11 +1,4 @@
-﻿using Newtonsoft.Json;
-using RestSharp;
-using System;
-using System.IO;
-using System.Net;
-using System.Security.Cryptography;
-using System.Text;
-using System.Net.Http;
+﻿using LeedsTwitterBot.ApiServices;
 
 namespace LeedsTwitterBot
 {
@@ -13,19 +6,11 @@ namespace LeedsTwitterBot
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Program p = new Program();
-            p.Run();
-        }
-        public void Run(){
-            //GetFplApiJson fplJson = new GetFplApiJson();
-            //fplJson.GetFplJsonAsync();
+            StartUp s = new StartUp();
+            s.Run();
 
-            //SendTweet sendTweet = new SendTweet();
-            //sendTweet.SimpleTweet();
-
-            TestJSONtoModel jsonToModel = new TestJSONtoModel();
-            jsonToModel.TestJsonToModelAsync();
+            //SendTweet s = new SendTweet();
+            //s.SimpleTweet("leeds");
         }
     }
 }

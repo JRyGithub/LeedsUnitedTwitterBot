@@ -11,7 +11,7 @@ namespace LeedsTwitterBot
 {
     public  class TestJSONtoModel
     {
-        private readonly string CallerFilePathAttribute = @"C:\Users\Gorilla Rig\Desktop\Projects\LeedsUnitedTwitterBot\LeedsTwitterBot\MiniJson.Json";
+        private readonly string CallerFilePathAttribute = @"C:\Users\Gorilla Rig\Desktop\Projects\LeedsUnitedTwitterBot\LeedsTwitterBot\config.Json";
         public async System.Threading.Tasks.Task TestJsonToModelAsync()
         {
             Console.WriteLine("1");

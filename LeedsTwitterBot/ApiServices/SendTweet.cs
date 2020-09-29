@@ -2,16 +2,15 @@ using RestSharp;
 using System;
 using System.IO;
 
-namespace LeedsTwitterBot
+namespace LeedsTwitterBot.ApiServices
 {
     public class SendTweet
     {
-        private string tweet = "Hello World";
-        private string consumerAPIKey = "hpihcVfSGLwviK26oUnuctpWj";
-        private string consumerAPISecret = "zmwDeTPnX0Oig7ZtAdy2tgBqP6n819gTO6enuXsFLKBqbHVmmu";
-        private string oAuthAccessToken = "1301394952048451584-4mABjO3BD6vSQZHFzIXvAZ9xjKtsqO";
-        private string oAuthAccessTokenSecret = "ukuP7vJIlkao0j5LtGtr2oPXFzW06LgA0YEgPARgbI4s3";
-        public void SimpleTweet()
+        private string consumerAPIKey = "22UfW93uYAcTg9OKQLgqRlEi8";
+        private string consumerAPISecret = "BcO35U70xsQZTsioSkvsxoAB7qiBqPQgwmKdSW3YzTsTqxinTQ";
+        private string oAuthAccessToken = "1301394952048451584-SjV1ByxZpbhseiO3uOU9v7Go7rnoOr";
+        private string oAuthAccessTokenSecret = "LeiUZApQ1rKehyglHAgO1ciDhZkQUBW5yCYH0JmXPTi2u";
+        public bool SimpleTweet(string tweet)
         {
             var twitterOauthToken = oAuthAccessToken;
             var twitterOauthTokenSecret = oAuthAccessTokenSecret;
@@ -27,6 +26,9 @@ namespace LeedsTwitterBot
             };
             IRestResponse response = client.Execute(request);
             Console.WriteLine(response.Content);
+
+            return true;
+       
         }
     }
 }
